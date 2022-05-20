@@ -29,6 +29,9 @@ div>article>h3{
   margin-bottom:45px;
   text-align:center;
 }
+img{
+  max-width:100%;
+}
 /* z-index: body, header(900) , modal(2500), aside(2000), nav(1500) */
 /* header */
 #wrap>#header{
@@ -118,6 +121,37 @@ header>nav>ul>li{
 #box01>article>ul>li>dl>dt{
   margin-bottom:10px;
 }
+/* #box02 */
 
+#box02{
+  background-color:#e8e8e8;
+}
+#info{
+  display:flex;
+  margin-bottom:68px;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  /* align-content:stretch; */
+}
+#info>h4{
+width:274px;
+margin-left:26px;
+}
+#info>ul{
+  width:618px;
+  margin-right:105px;
+}
+#info>ul>li{
+  display:flex;
+  margin-bottom:15px;
+  flex-wrap:wrap;
+
+}
+#info>ul>li>dfn{
+  width:150px;
+}
+#info>ul>li>span{
+  width:468px;
+}
 
 
