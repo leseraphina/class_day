@@ -1,0 +1,123 @@
+/* font-family: 'Raleway', sans-serif; */
+.hide{
+  width:0; height:0;
+  font-size:0; line-height: 0;
+  position:absolute;
+  visibility: hidden;
+}
+/*  공통 */
+html{
+  font-size:16px;
+  color:#666666;
+  font-family:'나눔고딕',sans-serif;
+}
+a{
+  color:#666666;
+}
+div>article,div>header{
+  width:1134px;
+  margin:0 auto;
+  /* background-color:pink; */
+}
+
+#wrap>div{
+  padding:70px 0;
+}
+
+div>article>h3{
+  font: 72px 'Raleway', sans-serif;
+  margin-bottom:45px;
+  text-align:center;
+}
+/* z-index: body, header(900) , modal(2500), aside(2000), nav(1500) */
+/* header */
+#wrap>#header{
+  padding: 20px 0;
+  background-color:rgba(60, 32, 61, 0.7);
+  position:fixed;
+  left:0; top:0;
+  width:100%;
+  z-index:900;
+}
+#header>header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header>header a{
+  color:#fff;
+}
+header>h1{
+  font-size:30px;
+}
+header>nav{}
+/* header>nav>ul{
+  display:flex;
+} */
+header>nav>ul>li{
+  display:inline-block;
+  margin-left:34px;
+  text-transform: uppercase;
+}
+
+/* heade btn */
+#header .btn{
+  position:absolute;
+  width:40px; height:40px;
+  background-color:red;
+  right:20px; top:25px;
+  display:none;
+}
+
+/* box01 */
+#wrap>#box01{
+  /* width:auot; */
+  height:100vh;
+  background:url('../images/header_back.png') no-repeat center top;
+  padding:0;
+}
+
+#box01>article{
+ height:100%;
+ position:relative;
+}
+#box01>article>h3{
+  position:absolute;
+  top:24.4680851%; left:0;
+  width:100%;
+  color:#fff;
+}
+#box01>article>ul{
+  position:absolute;
+  width:100%;
+  bottom:18.0851063%; left:0;
+  display:flex;
+  flex-wrap:wrap;
+  color:#fff;}
+#box01>article>ul>li{
+  width:33.33333%;}
+#box01>article>ul>li>span{
+  width:226px;
+  height:226px;
+  display:block;
+  border-radius:50%;
+  background:rgba(255,255,255,0.7) url('../images/header_icon_01.png') no-repeat center;
+  margin:0 auto 17px;}
+#box01>article>ul>li:nth-child(2)>span{
+  background-image:url('../images/header_icon_02.png');
+}
+#box01>article>ul>li:nth-child(3)>span{
+  background-image:url('../images/header_icon_03.png');
+}
+#box01>article>ul>li>dl{
+  width:226px;
+  margin: 0 auto;
+  text-align:center;
+  line-height:1.5;
+}
+#box01>article>ul>li>dl>dt{
+  margin-bottom:10px;
+}
+
+
+
