@@ -131,7 +131,7 @@ header>nav>ul>li{
   margin-bottom:68px;
   flex-wrap:wrap;
   justify-content: space-between;
-  /* align-content:stretch; */
+  align-content:flex-end;
 }
 #info>h4{
 width:274px;
