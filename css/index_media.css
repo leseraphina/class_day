@@ -327,6 +327,29 @@ width:52.5vw;
 margin-left:0;
 }
 /* box03 */
+#box03 ul{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: column;
+  margin-bottom:73px;
+  justify-content:space-around;
+}
+#box03 ul>li{
+  padding: 0 0px;
+  font-size:15px;
+  border-left:none;
+  width:100%;
+  border:1px solid #666;
+  margin-bottom:10px;
+  text-align:center;
+  box-sizing:border-box;
+}
+#box03 ul>li:first-child{
+  border-left:1px solid #666;
+}
+#box03 ul>li>a{
+  line-height: 30px;;
+}
 #gallery{
   position:relative;}
 #show{
@@ -384,7 +407,7 @@ aside{
 
 /* modal */
 #modal{
-  display:block;
+  display:none;
   padding: 10vh 5vw 5vh;
   box-sizing:border-box;}
 #modal>p{
