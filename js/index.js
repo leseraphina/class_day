@@ -1,9 +1,17 @@
 import $ from 'jquery'
 
+
+
+
 $(function(){
 // 1. window -> 함수의 적용
 let windowW = $(window).width();
 //console.log(windowW);
+
+// resize-> reset
+$(window).on('resize',function(e){
+  window.location.reload();
+})
 
 if(windowW > 1134){
   nav();
@@ -15,9 +23,12 @@ else if(windowW <= 1134 && windowW > 980 ){
 }
 else if(windowW <= 980 && windowW > 580 ){
   tNav()
+  gallery()
 }
 else if( windowW <= 580 ){
   tNav()
+  gallery()
+  FormData()
 }
 
 // 함수
@@ -84,7 +95,55 @@ function asideTop(){
 
 }
 // 4. gallery
+// console.log($('#box03 #all figure').width())
+// console.log($('#box03 #all figure').outerWidth(true)) -> figure 1개의 크기
 
-// 5. modal
+function gallery(){
+
+ const figureW =  $('#box03 #all figure').outerWidth(true);
+//  준비하기
+$('#all figure:last').prependTo('#all');
+$('#all').css('margin-left','-'+figureW+'px');
+
+// 이벤트
+$('#box03 .prev').on('click',function(e){
+$('#all').animate({marginLeft: '+='+figureW+'px'},600,function(){
+  $('#all figure:last').prependTo('#all');
+  $('#all').css('margin-left','-'+figureW+'px')
+})
+})
+
+$('#box03 .next').on('click',function(e){
+$('#all').animate({marginLeft:'-='+figureW+'px'},600,function(){
+  $('#all figure:first').appendTo('#all');
+  $('#all').css('margin-left','-'+figureW+'px')
+})
+})
+}
+
+//  form -> mobile
+function FormData(){
+ let $liForm = $('#box04 li>input,#box04 li>textarea');
+$liForm.removeAttr('placeholder');
+$liForm.on('focus',function(e){
+  $(this).prev('label').fadeOut(400);
+});
+$liForm.on('blur',function(e){
+ let str = $(this).val();
+ if(str === ''){
+   $(this).prev('label').fadeIn();
+ }
+});
+}
 
 })
+
+//  객체 생성
+
+// 1. 생성자 함수
+
+// 2. prototype
+// 3. 이벤트
+
+
+
