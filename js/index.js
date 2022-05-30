@@ -139,11 +139,65 @@ $liForm.on('blur',function(e){
 })
 
 //  객체 생성
-
 // 1. 생성자 함수
+function Modal(title,pic,year,program,url,text){
+this.title = title;
+this.pic = pic;
+this.year = year;
+this.program = program;
+this.url = url;
+this.text = text;
+}
 
 // 2. prototype
+ Modal.prototype.action = function(){
+ const H5 = document.querySelector('#modal h5');
+ const Img = document.querySelector('#modal figure>img')
+ const Figcaption = document.querySelector('#modal figure>figcaption')
+ const Year = document.querySelector('#modal .year')
+ const Program = document.querySelector('#modal .program')
+ const Url = document.querySelector('#mdal url>a')
+ const Text = document.querySelector('#modal .text')
+
+ H5.innerHTML = this.title;
+ Img.setAttribute('src',this.pic)
+ Figcaption.innerHTML = this.title;
+ Year.innerHTML = this.year;
+ Program.innerHTML = this.program;
+ Url.setAttribute('href',this.url);
+ Url.innerHTML = this.url;
+ Text.innerHTML = this.text;
+ }
+ let modal = [
+   new Modal('title01','./images/pic01.png','2001','프로그램1','http://aaa1.com','text01'),
+   new Modal('title02','./images/pic02.png','2002','프로그램2','http://aaa2.com','text02'),
+   new Modal('title03','./images/pic03.png','2003','프로그램3','http://aaa3.com','text03'),
+   new Modal('title04','./images/pic04.png','2004','프로그램4','http://aaa4.com','text014'),
+   new Modal('title05','./images/pic01.png','2005','프로그램5','http://aaa5.com','text05'),
+   new Modal('title06','./images/pic02.png','2006','프로그램6','http://aaa6.com','text06')
+ ]
 // 3. 이벤트
+// figure,.close
+const btn = document.querySelectorAll('#box03 figure')
+console.log(btn);
+const close = document.querySelector('#modal p.close')
 
+btn.forEach(function(item){
+  item.addEventListener('click',play);
+})
+close.addEventListener('click',stop)
 
+function play(){
+// 1.#modal -> display변경
+//2.내가 클릭한 figure name값을 가져오기
+// modal[2].action();
+document.querySelector('#modal').style.display = 'block'
+let num = this.getAttribute('name');
+console.log(num)
+modal[num].action();
+}
 
+function stop(){
+  document.querySelector('#modal').style.display = 'none'
+  // #modla -> none
+}
